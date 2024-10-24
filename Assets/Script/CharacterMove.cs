@@ -34,6 +34,14 @@ public class CharacterMove : MonoBehaviour
         { 
             animator.SetBool("Walk", false);
         }
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            animator.SetBool("IsRunning", true);
+        }
+        if (Input.GetKeyUp(KeyCode.Space))
+        {
+            animator.SetBool("IsRunning", false);
+        }
 
         transform.Rotate(new Vector3(0, rotateSpeed * horizonralInput, 0));
     }
