@@ -18,22 +18,26 @@ public class MoveCharacter : MonoBehaviour
         if (Input.GetKey(KeyCode.UpArrow))
         {
             transform.position += transform.forward * speed * Time.deltaTime;
+            transform.rotation = Quaternion.Euler(0.0f, 0.0f, 0.0f);
             animator.SetBool("Walk",true);
             
         }
         if (Input.GetKey(KeyCode.DownArrow)) 
         { 
-            transform.position -= transform.forward * speed * Time.deltaTime;
+            transform.position += transform.forward * speed * Time.deltaTime;
+            transform.rotation = Quaternion.Euler(0.0f,180.0f, 0.0f);
             animator.SetBool("Walk", true);
         }
         if (Input.GetKey(KeyCode.LeftArrow))
         {
-            transform.position -= transform.right * speed * Time.deltaTime;
+            transform.position += transform.forward * speed * Time.deltaTime;
+            transform.rotation = Quaternion.Euler(0.0f,270.0f,0.0f);
             animator.SetBool("Walk", true);
         }
         if (Input.GetKey(KeyCode.RightArrow)) 
-        { 
-            transform.position += transform.right * speed * Time.deltaTime;
+        {
+            transform.position += transform.forward * speed * Time.deltaTime;
+            transform.rotation = Quaternion.Euler(0.0f, 90.0f, 0.0f);
             animator.SetBool("Walk", true);
         }
 
